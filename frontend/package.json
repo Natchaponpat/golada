@@ -3,15 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.1.0",
+    "fs": "0.0.1-security",
     "next": "^7.0.2",
+    "next-redux-wrapper": "^2.0.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-scripts": "2.0.5"
+    "react-redux": "^5.0.7",
+    "react-scripts": "2.0.5",
+    "redux": "^4.0.1",
+    "redux-observable": "^1.0.0",
+    "rxjs": "^6.3.3"
   },
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "start": "API_URL=localhost:9000 next start",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

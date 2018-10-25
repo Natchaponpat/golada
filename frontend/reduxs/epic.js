@@ -1,6 +1,6 @@
 import { combineEpics } from 'redux-observable'
-import main from './main/reducer'
+import { mainInitEpic } from './main/epic'
 
 export default combineEpics(
-  main,
+  mainInitEpic,
 )

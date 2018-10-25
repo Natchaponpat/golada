@@ -1,12 +1,13 @@
-const channelState = {
+const mainState = {
   loading: false,
   error: '',
 }
 
-export default (state = channelState, action) => {
+export default (state = mainState, action) => {
   const { type, ...rest } = action
 
-  if (type.startsWith('channel/')) {
+  console.log('type..', type)
+  if (type.startsWith('main/')) {
     return Object.assign({}, state, rest)
   }
 

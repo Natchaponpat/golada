@@ -1,13 +1,31 @@
 // This is the Link API
 import Link from 'next/link'
 
-const Index = () => (
-  <div>
-    <Link href="/about">
-      <button>Go to About Page</button>
-    </Link>
-    <p>Hello Next.js</p>
-  </div>
-)
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { mainInit } from '../reduxs/main/action'
+class Index extends Component {
+  componentDidMount() {
+    const { dispatch } = this.props
+    dispatch(mainInit())
+  }
 
-export default Index
+  render() {
+    const { msg, error } = this.props
+
+    console.log('main render', msg, error)
+    return (
+      <div>
+        <Link href="/about">
+          <button>Go to About Page</button>
+        </Link>
+        {msg && <h1>{msg}</h1>}
+      </div>
+    )
+  }
+}
+
+export default connect(
+  state => state.main,
+  dispatch => ({ dispatch }),
+)(Index)
