@@ -3,7 +3,7 @@ version: "2.0"
 services:
   mongo:
     container_name: mongo
-    image: mongo:lastest
+    image: mongo:latest
     restart: always
     # ports:
     #   - 270017:27017
@@ -12,7 +12,7 @@ services:
 
   mongo-express:
     container_name: mongo-express
-    image: mongo-express:lastest
+    image: mongo-express:latest
     restart: always
     # ports:
     #   - 8081:8081
@@ -20,8 +20,8 @@ services:
       - mongo
 
   nginx:
-    container_name: mongo
-    image: mongo:lastest
+    container_name: nginx
+    image: mongo:latest
     restart: always
     # ports:
     #   - 80:80
