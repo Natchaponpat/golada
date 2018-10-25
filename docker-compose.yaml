@@ -47,7 +47,7 @@ services:
       dockerfile: Dockerfile
     image: kerkoleng/golada-frontend:latest
     environment: 
-      - API_URL:https://139.5.147.238/api
+      - API_URL=https://139.5.147.238/api
     depends_on:
       - backend
 
