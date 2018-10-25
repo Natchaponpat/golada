@@ -37,3 +37,12 @@ services:
     image: kerkoleng/golada-frontend:latest
     depends_on:
       - backend
+
+  backend:
+    container_name: backend
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    image: kerkoleng/golada-backend:latest
+    depends_on:
+      - mongo
