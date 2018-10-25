@@ -1,0 +1,12 @@
+version: "2.0"
+
+services:
+  mongo:
+      container_name: jenkins
+      image: jenkinsci/blueocean
+      restart: always
+      ports:
+         - 8888:8080
+      volumes:
+        - ./db:/data/db
+        - ./jenkins_home:/var/jenkins_home
