@@ -53,10 +53,12 @@ func main() {
 	m, err := mgo.Dial(mongoDial)
 	if err != nil {
 		fmt.Println("cannot dial to mongo", err)
+		return
 	}
 
 	if err = initMongo(m); err != nil {
 		fmt.Println("cannot init mongo", err)
+		return
 	}
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
