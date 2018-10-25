@@ -5,15 +5,21 @@ services:
     container_name: mongo
     image: mongo:latest
     restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
     # ports:
     #   - 270017:27017
     volumes:
-      - /home/tmp:/data/db
+      - ./mongo/db:/data/db
 
   mongo-express:
     container_name: mongo-express
     image: mongo-express:latest
     restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
     # ports:
     #   - 8081:8081
     depends_on:
