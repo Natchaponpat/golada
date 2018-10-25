@@ -61,7 +61,7 @@ func main() {
 		return
 	}
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/api", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		res := struct {
 			ID  string `json:"-" bson:"id"`
@@ -76,7 +76,7 @@ func main() {
 		json.NewEncoder(w).Encode(res)
 	})
 
-	http.HandleFunc("/migrate", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/api/migrate", func(w http.ResponseWriter, r *http.Request) {
 		err := initMongo(m)
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
