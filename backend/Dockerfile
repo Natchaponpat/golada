@@ -13,6 +13,6 @@ WORKDIR /app
 ENV GOLADA_BACKEND_PORT 8080
 COPY --from=build-env /golada-backend/golada-backend /app/.
 
-EXPOSE 8000
+EXPOSE 8080
 
 CMD ["/app/golada-backend"]
