@@ -19,7 +19,7 @@ func main() {
 		fmt.Fprint(w, "Hello golada\n")
 	})
 	port := viper.GetString("backend.port")
-	if err := http.ListenAndServe(port, nil); err != nil {
+	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		fmt.Println(err)
 	}
 }
