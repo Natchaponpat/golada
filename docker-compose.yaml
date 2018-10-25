@@ -5,8 +5,8 @@ services:
     container_name: mongo
     image: mongo:lastest
     restart: always
-    ports:
-      - 270017:27017
+    # ports:
+    #   - 270017:27017
     volumes:
       - /home/tmp:/data/db
 
@@ -14,8 +14,8 @@ services:
     container_name: mongo-express
     image: mongo-express:lastest
     restart: always
-    ports:
-      - 8081:8081
+    # ports:
+    #   - 8081:8081
     depends_on:
       - mongo
 
@@ -23,7 +23,7 @@ services:
     container_name: mongo
     image: mongo:lastest
     restart: always
-    ports:
-      - 80:80
+    # ports:
+    #   - 80:80
     depends_on:
       - mongo
