@@ -40,6 +40,8 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     image: kerkoleng/golada-frontend:latest
+    ports:
+      - 8080:3000
     depends_on:
       - backend
 
