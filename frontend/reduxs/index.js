@@ -3,13 +3,19 @@ import { createEpicMiddleware } from 'redux-observable'
 
 import rootReducer from './reducer'
 import rootEpic from './epic'
-const URL = process.env.API_URL || ''
+import getConfig from 'next/config'
+
 
 export default () => {
-  console.log('URL', URL)
+
+
+  const { publicRuntimeConfig } = getConfig()
+  const { API_URL } = publicRuntimeConfig
+
+  console.log('API_URL', API_URL)
 
   const epicMiddleware = createEpicMiddleware({
-    dependencies: { url: URL },
+    dependencies: { url: API_URL },
   })
   const composeEnhancers =
     // window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ||

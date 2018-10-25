@@ -2,7 +2,6 @@ import { of, from } from 'rxjs'
 import { switchMap, catchError, takeUntil, map } from 'rxjs/operators'
 import axios from 'axios'
 import { MAIN_DONE, MAIN_INIT, mainDone, MAIN_ERROR } from './action'
-const API_URL = process.env.API_URL || 'localhost:9000'
 
 export const mainInitEpic = (action$, state$, { url }) =>
   action$
@@ -14,7 +13,7 @@ export const mainInitEpic = (action$, state$, { url }) =>
       switchMap(() =>
         from(
           axios({
-            url: `${API_URL}/api`,
+            url: `${url}/api`,
             method: 'GET',
           }),
         ).pipe(
