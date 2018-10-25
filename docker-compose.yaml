@@ -27,3 +27,13 @@ services:
     #   - 80:80
     depends_on:
       - mongo
+  
+  frontend:
+    command: npm run start
+    container_name: react-app
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: kerkoleng/golada-frontend:latest
+    depends_on:
+      - backend
