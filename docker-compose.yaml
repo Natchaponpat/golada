@@ -40,7 +40,7 @@ services:
       - ./nginx/conf:/etc/nginx/conf.d/
   
   frontend:
-    command: npm run start
+    command: sh -c 'npm run build && npm run start'
     container_name: frontend
     build: 
       context: ./frontend
