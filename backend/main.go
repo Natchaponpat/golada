@@ -16,6 +16,7 @@ func init() {
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
 		fmt.Fprint(w, "Hello golada\n")
 	})
 	port := viper.GetString("backend.port")
