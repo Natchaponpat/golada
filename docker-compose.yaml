@@ -1,0 +1,29 @@
+version: "2.0"
+
+services:
+  mongo:
+    container_name: mongo
+    image: mongo:lastest
+    restart: always
+    # ports:
+    #   - 270017:27017
+    volumes:
+      - /home/tmp:/data/db
+
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express:lastest
+    restart: always
+    # ports:
+    #   - 8081:8081
+    depends_on:
+      - mongo
+
+  nginx:
+    container_name: mongo
+    image: mongo:lastest
+    restart: always
+    # ports:
+    #   - 80:80
+    depends_on:
+      - mongo
