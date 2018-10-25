@@ -30,7 +30,7 @@ services:
   
   frontend:
     command: npm run start
-    container_name: react-app
+    container_name: frontend
     build: 
       context: ./frontend
       dockerfile: Dockerfile
