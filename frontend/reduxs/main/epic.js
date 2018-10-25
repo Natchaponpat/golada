@@ -14,7 +14,7 @@ export const mainInitEpic = (action$, state$, { url }) =>
       switchMap(() =>
         from(
           axios({
-            url: `http://${API_URL}`,
+            url: `${API_URL}/api`,
             method: 'GET',
           }),
         ).pipe(
