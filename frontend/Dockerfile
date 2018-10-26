@@ -4,8 +4,9 @@ COPY . /golada/web/.
 
 WORKDIR /golada/web/.
 
-RUN npm install
+RUN npm install && \
+  npm run build
 
 EXPOSE 3000
 
-CMD [ "npm" , "run" , "build" ]
+CMD [ "npm" , "run" , "start" ]
